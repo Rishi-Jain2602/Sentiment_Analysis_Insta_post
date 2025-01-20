@@ -3,6 +3,10 @@ const app = express();
 const port = 5000;
 require('dotenv').config();
 
+app.use(cors({
+    origin: 'https://sentiment-analysis-insta-post-frontend.vercel.app'
+  }));
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
