@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Styles/Image.css'
+import { Link } from 'react-router-dom';
 
 export default function Image() {
   const [data, setData] = useState([]);
@@ -39,7 +40,7 @@ export default function Image() {
             <p className="card-text"><strong>Inhouse/Wild:</strong> {item["Data Collection"].Inhouse_Wild ? 'Yes' : 'No'}</p>
 
             <p className="card-text"><strong>Hashtags:</strong> {item.hashtag.join(', ') || 'No Hashtags are there'}</p>
-            <a href={item.url} className="btn btn-primary">View on Instagram</a>
+            <Link to={item.url}target="_blank" rel="noopener noreferrer" className="btn btn-primary">View on Instagram</Link>
           </div>
         </div>
       ))}

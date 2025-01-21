@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import './Styles/Video.css'
+import { Link } from 'react-router-dom'
 
 export default function Video() {
   const [data, setData] = useState([]);
@@ -54,9 +55,9 @@ export default function Video() {
                 </span>
               )}
             </p>
-            <a href="#!" onClick={() => toggleCaption(item._id)}>
+            <Link to="#!" onClick={() => toggleCaption(item._id)}>
               {expandedCaption === item._id ? 'Read Less' : 'Read More'}
-            </a>
+            </Link>
             {/* Frame Description */}
             <p className="card-text py-2">
               <strong>Frame Description:</strong>
@@ -70,9 +71,9 @@ export default function Video() {
                 </span>
               )}
             </p>
-            <a href="#!" onClick={() => toggleFrameDesc(item._id)}>
+            <Link to="#!" onClick={() => toggleFrameDesc(item._id)}>
               {expandedFrameDesc === item._id ? 'Read Less' : 'Read More'}
-            </a>
+            </Link>
             
             {/* Oral Transcript */}
             <p className="card-text py-2">
@@ -87,9 +88,9 @@ export default function Video() {
                 </span>
               )}
             </p>
-            <a href="#!" onClick={() => toggleOralTranscript(item._id)}>
+            <Link to="#!" onClick={() => toggleOralTranscript(item._id)}>
               {expandedOralTranscript === item._id ? 'Read Less' : 'Read More'}
-            </a>
+            </Link>
 
             {/* <p className="card-text py-2"><strong>Oral Transcript:</strong> {item["Data_Collection"]['Oral Transcript']}</p> */}
             <p className="card-text"><strong>Identified Hotel:</strong> {item["Summary"].IdentifiedHotel ? 'Yes' : 'No'}</p>
@@ -101,7 +102,7 @@ export default function Video() {
             <p className="card-text"><strong>Inhouse/Wild:</strong> {item["Summary"].Inhouse_Wild ? 'Yes' : 'No'}</p>
 
             <p className="card-text"><strong>Hashtags:</strong> {item.Summary.Tags.join(', ') || 'No Hashtags are there'}</p>
-            <a href={item.Result.url} className="btn btn-primary">View on Instagram</a>
+            <Link to={item.Result.url} target="_blank" rel="noopener noreferrer"  className="btn btn-primary">View on Instagram</Link>
           </div>
         </div>
       ))}
