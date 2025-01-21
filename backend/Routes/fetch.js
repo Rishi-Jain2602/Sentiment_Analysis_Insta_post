@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ImgDb = require('../Model/data');
+const VidDb = require('../Model/video_data')
 const connectDb = require('../db');
 connectDb();
 
@@ -11,6 +12,16 @@ router.post("/fetchImg", async (req,res)=>{
   } catch (error) {
       console.log(error);
       res.status(500).json({message:"Server Error"})
+  }
+})
+
+router.post("/fetchVid",async(req,res)=>{
+  try {
+    const videos = await VidDb.find({});
+    res.json(videos);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({message:"Server Error"})
   }
 })
 
