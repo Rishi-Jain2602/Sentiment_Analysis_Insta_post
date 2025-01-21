@@ -5,7 +5,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 app.use(cors({
-    origin: 'https://sentiment-analysis-insta-post-frontend.vercel.app'
+    origin: '*'
   }));
 
   
