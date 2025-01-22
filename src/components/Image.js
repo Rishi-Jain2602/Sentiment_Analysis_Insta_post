@@ -7,8 +7,7 @@ export default function Image() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // axios.post('https://sentiment-analysis-insta-post.vercel.app/db/fetchImg')
-    axios.post('http://localhost:5000/db/fetchImg')
+    axios.post('https://sentiment-analysis-insta-post.vercel.app/db/fetchImg')
       .then(response => {
         setData(response.data);
       })

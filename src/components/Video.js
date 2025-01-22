@@ -23,8 +23,7 @@ export default function Video() {
 
 
   useEffect(() => {
-    // axios.post('https://sentiment-analysis-insta-post.vercel.app/db/fetchVid')
-    axios.post('http://localhost:5000/db/fetchVid')
+    axios.post('https://sentiment-analysis-insta-post.vercel.app/db/fetchVid')
       .then(response => {
         setData(response.data);
       })
