@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const ImgDb = require('../Model/data');
-const VidDb = require('../Model/video_data')
+const ImgDb = require('../Model/Img_schema.js');
+const VidDb = require('../Model/video_schema.js')
 const connectDb = require('../db');
 connectDb();
 
