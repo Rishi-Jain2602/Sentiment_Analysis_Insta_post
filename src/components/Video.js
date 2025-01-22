@@ -50,12 +50,12 @@ export default function Video() {
               <p>No video available</p> // Display if VideoUrl is missing
             )}
             <p className="card-text">{item.caption}</p>
-            <p className="card-text"><strong>BioGraphy:</strong> {item['Data_Collection']['Biography of User'] || 'Nothing to show'}</p>
+            <p className="card-text"><strong>BioGraphy: </strong> {item['Data_Collection']['Biography of User'] || 'Nothing to show'}</p>
             {/* <p className="card-text"><strong>Caption:</strong> {item["Data_Collection"]['Caption']}</p> */}
 
             {/* Caption */}
             <p className="card-text">
-              <strong>Caption:</strong>
+              <strong>Caption: </strong>
               {expandedCaption !== item._id ? (
                 <span className="truncate">
                   {item["Data_Collection"]['Caption']}
@@ -71,7 +71,7 @@ export default function Video() {
             </Link>
             {/* Frame Description */}
             <p className="card-text py-2">
-              <strong>Frame Description:</strong>
+              <strong>Frame Description: </strong>
               {expandedFrameDesc !== item._id ? (
                 <span className="truncate">
                   {item["Data_Collection"]['Frame Description']}
@@ -88,7 +88,7 @@ export default function Video() {
 
             {/* Oral Transcript */}
             <p className="card-text py-2">
-              <strong>Oral Transcript:</strong>
+              <strong>Oral Transcript: </strong>
               {expandedOralTranscript !== item._id ? (
                 <span className="truncate">
                   {item["Data_Collection"]['Oral Transcript']}
@@ -104,16 +104,16 @@ export default function Video() {
             </Link>
 
             {/* <p className="card-text py-2"><strong>Oral Transcript:</strong> {item["Data_Collection"]['Oral Transcript']}</p> */}
-            <p className="card-text"><strong>Identified Hotel:</strong> {item["Summary"].IdentifiedHotel ? 'Yes' : 'No'}</p>
-            <p className="card-text"><strong>Tajness Score:</strong> {item["TajNess Score"]}</p>
-            <p className="card-text"><strong>Score Explanation</strong>
+            <p className="card-text"><strong>Identified Hotel: </strong> {item["Summary"].IdentifiedHotel ? 'Yes' : 'No'}</p>
+            <p className="card-text"><strong>Tajness Score: </strong> {item["TajNess Score"]}</p>
+            <p className="card-text"><strong>Score Explanation </strong>
               {item['score_explanation']}
             </p>
-            <p className="card-text"><strong>Hotel Name:</strong> {item["Summary"]['Hotel Name'] || 'No Hotel Name is Available'}</p>
+            <p className="card-text"><strong>Hotel Name: </strong> {item["Summary"]['Hotel Name'] || 'No Hotel Name is Available'}</p>
             <p className="card-text"><strong>Permission:</strong> {item.Permission ? 'Granted' : 'Not Granted'}</p>
-            <p className="card-text"><strong>Reason:</strong> {item.Reason || 'No reason provided'}</p>
-            <p className="card-text"><strong>Relation:</strong> {item["Summary"]['Relation to the brand']}</p>
-            <p className="card-text"><strong>Inhouse/Wild:</strong> {item["Summary"]['Inhouse/Wild']}</p>
+            <p className="card-text"><strong>Reason: </strong> {item.Reason || 'No reason provided'}</p>
+            <p className="card-text"><strong>Relation: </strong> {item["Summary"]['Relation to the brand']}</p>
+            <p className="card-text"><strong>Inhouse/Wild: </strong> {item["Summary"]['Inhouse/Wild']}</p>
             <p className="card-text"><strong>Categories: </strong>
               {item['Categories']}
             </p>
