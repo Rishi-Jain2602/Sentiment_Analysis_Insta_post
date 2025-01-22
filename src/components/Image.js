@@ -30,7 +30,7 @@ export default function Image() {
           <div className="card-body">
 
             <h5 className="card-title">{item.ownerFullName}</h5>
-            <p className="card-text">{item.caption}</p>
+            <p className="card-text"><strong>Caption: s</strong>{item.caption}</p>
             <p className="card-text"><strong>Tajness Score:</strong> {item["Tajness Score"]}</p>
             <p className="card-text"><strong>Score Explanation</strong>
               {item['score_explanation']}
