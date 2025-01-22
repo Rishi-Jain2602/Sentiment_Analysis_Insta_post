@@ -15,6 +15,36 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* Video container class */
+.video-container {
+  width: 100%;
+  max-width: 800px; /* You can adjust this based on your needs */
+  margin: 0 auto; /* Centers the video on the page */
+  background-color: #000; /* Black background for video container */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
+}
+
+/* Video player class */
+.video-player {
+  width: 100%;
+  height: auto; /* Ensure the video scales according to the width */
+  object-fit: contain; /* Makes sure the entire video is visible without cropping */
+  border-radius: 8px; /* Optional: Adds rounded corners to the video */
+}
+
+.count-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 
 /* Card styling */
