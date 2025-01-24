@@ -34,7 +34,7 @@ export default function Video() {
   }, []);
   return (
     <div className="container">
-      {data.map((item,index) => (
+      {data.map((item, index) => (
         <div key={item._id} className="card mb-4" >
           <div className="count-badge">{index + 1}</div>
           <div className="card-body">
@@ -45,6 +45,9 @@ export default function Video() {
                   <source src={item.VideoUrl} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <div className="tajness-score-badge">
+                  Score: <strong>{item["TajNess Score"]}</strong>
+                </div>
               </div>
             ) : (
               <p>No video available</p> // Display if VideoUrl is missing
@@ -56,31 +59,21 @@ export default function Video() {
             {/* Caption */}
             <p className="card-text">
               <strong>Caption: </strong>
-              {expandedCaption !== item._id ? (
-                <span className="truncate">
-                  {item["Data_Collection"]['Caption']}
-                </span>
-              ) : (
-                <span>
-                  {item["Data_Collection"]['Caption']}
-                </span>
-              )}
+              <div className={`content-box ${expandedCaption === item._id ? 'expanded' : ''}`}>
+                {item["Data_Collection"]['Caption']}
+              </div>
             </p>
             <Link to="#!" onClick={() => toggleCaption(item._id)}>
               {expandedCaption === item._id ? 'Read Less' : 'Read More'}
             </Link>
+
+
             {/* Frame Description */}
             <p className="card-text py-2">
               <strong>Frame Description: </strong>
-              {expandedFrameDesc !== item._id ? (
-                <span className="truncate">
-                  {item["Data_Collection"]['Frame Description']}
-                </span>
-              ) : (
-                <span>
-                  {item["Data_Collection"]['Frame Description']}
-                </span>
-              )}
+              <div className={`content-box ${expandedFrameDesc === item._id ? 'expanded' : ''}`}>
+                {item["Data_Collection"]['Frame Description']}
+              </div>
             </p>
             <Link to="#!" onClick={() => toggleFrameDesc(item._id)}>
               {expandedFrameDesc === item._id ? 'Read Less' : 'Read More'}
@@ -89,15 +82,9 @@ export default function Video() {
             {/* Oral Transcript */}
             <p className="card-text py-2">
               <strong>Oral Transcript: </strong>
-              {expandedOralTranscript !== item._id ? (
-                <span className="truncate">
-                  {item["Data_Collection"]['Oral Transcript']}
-                </span>
-              ) : (
-                <span>
-                  {item["Data_Collection"]['Oral Transcript']}
-                </span>
-              )}
+              <div className={`content-box ${expandedOralTranscript === item._id ? 'expanded' : ''}`}>
+                {item["Data_Collection"]['Oral Transcript']}
+              </div>
             </p>
             <Link to="#!" onClick={() => toggleOralTranscript(item._id)}>
               {expandedOralTranscript === item._id ? 'Read Less' : 'Read More'}

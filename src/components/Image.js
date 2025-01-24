@@ -16,20 +16,23 @@ export default function Image() {
       });
 
   }, []);
-  
+
 
 
   return (
     <div className="container">
-      {data.map((item,index) => (
+      {data.map((item, index) => (
         <div key={item._id} className="card mb-4" >
           <div className="count-badge">{index + 1}</div>
+          <div className="tajness-score"> Score: {item["Tajness Score"]}</div>
+          {/* <div className="card-body">
+            <h5 className="card-title">{item.ownerFullName}</h5>
+          </div> */}
           <img src={`data:image/jpeg;base64,${item.image_data}`} className="card-img-top" alt={"Not Able to fetch the Image"} />
 
 
           <div className="card-body">
 
-            <h5 className="card-title">{item.ownerFullName}</h5>
             <p className="card-text"><strong>Caption: </strong>{item.caption}</p>
             <p className="card-text"><strong>Tajness Score: </strong> {item["Tajness Score"]}</p>
             <p className="card-text"><strong>Score Explanation </strong>
@@ -39,9 +42,11 @@ export default function Image() {
             <p className="card-text"><strong>Reason: </strong> {item.Reason || 'No reason provided'}</p>
             <p className="card-text"><strong>BioGraphy: </strong> {item.BioGraphy}</p>
             <p className="card-text"><strong>Description: </strong>
-              {item["Data Collection"] && item["Data Collection"].description
-                ? item["Data Collection"].description
-                : "No Description provided"}
+              {item["Data Collection"] && item["Data Collection"].description ? (
+                <div className="scrollable-content">{item["Data Collection"].description}</div>
+              ) : (
+                "No Description provided"
+              )}
             </p>
             <p className="card-text"><strong>Identified Hotel: </strong>
               {item["Data Collection"] && item["Data Collection"].IdentifiedHotel
