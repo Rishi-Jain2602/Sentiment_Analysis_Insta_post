@@ -29,8 +29,6 @@ export default function Image() {
             <h5 className="card-title">{item.ownerFullName}</h5>
           </div> */}
           <img src={`data:image/jpeg;base64,${item.image_data}`} className="card-img-top" alt={"Not Able to fetch the Image"} />
-
-
           <div className="card-body">
 
             <p className="card-text"><strong>Caption: </strong>{item.caption}</p>
