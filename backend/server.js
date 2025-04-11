@@ -7,7 +7,7 @@ require('dotenv').config();
 // Allow requests from both localhost and your Vercel frontend
 const allowedOrigins = [
     'http://localhost:3000',
-    'https://sentiment-analysis-insta-post-frontend.vercel.app'
+    'https://sentiment-analysis-insta-post-frontend.vercel.app','https://sentiment-analysis-insta-post-frontend-ct5ekcgds.vercel.app'
 ];
 
 // CORS middleware configuration
