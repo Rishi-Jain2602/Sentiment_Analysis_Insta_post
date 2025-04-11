@@ -24,6 +24,7 @@ export default function Video() {
 
   useEffect(() => {
     axios.post('https://sentiment-analysis-insta-post.vercel.app/db/fetchVid')
+    // axios.post('http://localhost:5000/db/fetchVid')
       .then(response => {
         setData(response.data);
       })
@@ -42,7 +43,7 @@ export default function Video() {
             {item.VideoUrl ? ( // Check if VideoUrl exists before rendering
               <div className="video-container">
                 <video controls className="video-player">
-                  <source src={item.VideoUrl} type="video/mp4" />
+                  <source src={item.aws_url} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="tajness-score-badge">

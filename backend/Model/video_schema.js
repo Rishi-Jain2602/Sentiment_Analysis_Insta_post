@@ -25,7 +25,8 @@ const VidDbSchema = new Schema({
     Reason: { type: String, required: true },
     Categories: {type:[String],required:true},
     score_explanation: {type:String,required:true},
-    VideoUrl:{type:String,required:true}
-},{collection:'video'})
+    VideoUrl:{type:String,required:true},
+    aws_url:{type:String,required:true}
+},{collection:'Video'})
 
 module.exports = mongoose.model('VidSchema',VidDbSchema)

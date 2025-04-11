@@ -21,6 +21,6 @@ const DbSchema = new Schema({
     Reason: { type: String, required: true },
     Categories: {type:String,required:true},
     score_explanation: {type:String,required:true}
-},{collection:'image'})
+},{collection:'Image'})
 
 module.exports = mongoose.model('ImgSchema',DbSchema)
